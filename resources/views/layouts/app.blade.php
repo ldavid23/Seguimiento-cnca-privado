@@ -87,6 +87,7 @@
   <title>{{ config('app.name', 'SEGUIMIENTO') }}</title>
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/sena_logo.svg" />
   <link rel="stylesheet" href="../assets/css/styles.min.css" />
+  @yield('css')
 </head>
 
 <body>
@@ -113,7 +114,7 @@
               <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./index.html" aria-expanded="false">
+              <a class="sidebar-link" href="{{route('home')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -125,11 +126,11 @@
               <span class="hide-menu">UI COMPONENTS</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+              <a class="sidebar-link" href="{{route('aprendiz.read')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
-                <span class="hide-menu">Buttons</span>
+                <span class="hide-menu">Aprendices</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -286,6 +287,7 @@
 <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
 <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
 <script src="../assets/js/dashboard.js"></script>
+@yield('js')
 </body>
 
 </html>
