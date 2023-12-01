@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aprendiz;
+use Error;
 use Illuminate\Http\Request;
 
 class AprendizController extends Controller
@@ -41,20 +42,24 @@ class AprendizController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validate=$request->validate([
-            "nombre_aprendiz" => "required|min:8",
-            "n_documento" =>  "required",
-            "n_ficha" => "required|min:6",
-            "nombre_ficha"=>"required",
-            "telefono" => "required|min:10",
-            "correo" => "required",
-            "direccion" => "required",
-            "updated_at"=> now()
-        ]);
-        Aprendiz::where("id","=",$id)->update($validate);
-        return back()->with("mensaje",["type"=>"success","title"=>"Se actualizo exitosamente"]);
+    //     try {
+    //     $validate=$request->validate([
+    //         "nombre_aprendiz" => "required|min:8",
+    //         "n_documento" =>  "required",
+    //         "n_ficha" => "required|min:6",
+    //         "nombre_ficha"=>"required",
+    //         "telefono" => "required|min:9",
+    //         "correo" => "required",
+    //         "direccion" => "required",
+    //         // "updated_at"=> now()
+    //     ]);
+    //     Aprendiz::where("id","=",$id)->update($validate);
+    //     return back()->with("mensaje",["type"=>"success","title"=>"Se actualizo exitosamente"]);
+    // } catch (Error $error) {
+    //     return back()->with("mensaje",["type"=>"danger","title"=>"oops! nos salio este error: $error"]);
+    // };
         // return $id;
-        // return $request;
+        return $request;
     }
 
     /**

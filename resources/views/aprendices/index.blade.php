@@ -4,7 +4,6 @@
 @endsection
 
 @section('content')
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-15">
@@ -35,15 +34,17 @@
                                 <td>{{$aprendiz->telefono}}</td>
                                 <td>{{$aprendiz->correo}}</td>
                                 <td>{{$aprendiz->direccion}}</td>
-                                <td><button data-bs-toggle="modal" data-bs-target="#UpdateForm{{$aprendiz->id}}" class="btn btn-outline-warning  btn-sm">Editar</button>
+                                 <td>{{--<button data-bs-toggle="modal" data-bs-target="#UpdateForm{{$aprendiz->id}}" class="btn btn-outline-warning  btn-sm">Editar</button>
                                     <form action="{{route("Aprendiz.destroy",["Aprendiz"=>$aprendiz->id])}}" method="post">
                                         @csrf
                                         @method("DELETE")
                                         <button onclick="return confirm('Seguro que quieres borrar?'); " type="submit" class="btn btn-outline-danger btn-sm"> Borrar </button>
-                                    </form>
+                                    </form> --}}
+                                    <button type="button" onclick="edit({{$aprendiz}},)" >Editar </button>
                                 </td>
-                                @include("aprendices.edit")
+                                {{-- @include("aprendices.edit") --}}
                             </tr>
+                            <script src="../assets/js/edit.js"></script>
                             @empty
                                 <tr> <td colspan="9" class="table-active">{{__("no data available")}}</td></tr>
                             @endforelse
@@ -63,7 +64,6 @@
 @section('js')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
-{{-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> --}}
 <script>
 new DataTable('#example');
 </script>

@@ -88,6 +88,7 @@
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/sena_logo.svg" />
   <link rel="stylesheet" href="../assets/css/styles.min.css" />
   @yield('css')
+  <meta name="csrf-token" content="{{csrf_token()}}">
 </head>
 
 <body>
@@ -287,6 +288,7 @@
 <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
 <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
 <script src="../assets/js/dashboard.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 @yield('js')
 </body>
 
